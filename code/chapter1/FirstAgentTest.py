@@ -1,3 +1,7 @@
+# 这不是普通注释，这是发给 AI 的强制指令。
+# 它规定了 AI 必须以 Thought 开头，Action 结尾。
+# 如果没有这段指令，AI 可能会像普通聊天机器人一样废话连篇，而无法触发后面的代码逻辑。
+
 AGENT_SYSTEM_PROMPT = """
 你是一个智能旅行助手。你的任务是分析用户的请求，并使用可用工具一步步地解决问题。
 
@@ -38,7 +42,7 @@ def get_weather(city: str) -> str:
         response = requests.get(url)
         # 检查响应状态码是否为200 (成功)
         response.raise_for_status() 
-        # 解析返回的JSON数据
+        # 解析返回的JSON数据，把网页返回的数据转成 Python 字典
         data = response.json()
         
         # 提取当前天气状况
